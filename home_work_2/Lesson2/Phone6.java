@@ -2,9 +2,14 @@ package Lesson2;
 
 public class Phone6 {
 static void createPhoneNumber (int phone[])
+{if (phone.length!=10)
 {
-    System.out.println("("+phone[1]+phone[2]+phone[3]+") "+phone[4]+phone[5]+phone[6]+"-"+
-            +phone[7]+phone[8]+phone[9]+phone[0]+"." );
+    System.out.println("Введен неверный формат данных");
+}
+else {
+    System.out.println("(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" +
+            +phone[7] + phone[8] + phone[9] + phone[0] + ".");
+}
 }
 
     public static void main(String[] args) {
