@@ -4,8 +4,6 @@ public class CalculatorWithCounterAutoInterface {
 
     long using;
 
-
-
     public long getCountOperation(){
         return using;
     }
