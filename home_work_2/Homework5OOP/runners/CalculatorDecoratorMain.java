@@ -5,20 +5,6 @@ import Homework5OOP.calcs.additional2.CalculatorWithCounterAutoDecorator;
 import Homework5OOP.calcs.additional2.CalculatorWithMemoryDecorator;
 import Homework5OOP.calcs.additional2.ICalculator;
 
-class Cal1 extends CalculatorWithMemoryDecorator {
-    public Cal1(ICalculator calculator) {
-        super(calculator);
-    }
-}
-
-class Cal3 extends CalculatorWithCounterAutoDecorator {
-    public Cal3(ICalculator calculator) {
-        super(calculator);
-    }
-}
-
-class Cal4 extends CalculatorWithMathExtends implements ICalculator {}
-
 
 public class CalculatorDecoratorMain {
     public static void main(String[] args) {
@@ -30,9 +16,9 @@ public class CalculatorDecoratorMain {
         System.out.println(a);
         System.out.println(CWCAS1.getCountOperation());
         System.out.println(CWCAS1.returnMemory());
-        //CWCAS1.multiplication (12.6,2.0);  тестовые блоки, для проверки работоспособности
+        //CWCAS1.multiplication (12.6,2.0); // тестовые блоки, для проверки работоспособности
         //System.out.println(CWCAS1.returnMemory());
-        //System.out.println(CWCAS1.returnMemory());
+       // System.out.println(CWCAS1.returnMemory());
 
     }
 }
