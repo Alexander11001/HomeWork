@@ -1,12 +1,9 @@
 package Homework4;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class DataContainer <T> {
-
-    int a;
-
-
 
     T[] data;
     public DataContainer (T [] data) {
@@ -14,7 +11,7 @@ public class DataContainer <T> {
     }
 
 
-    int add(T item)
+    public int add(T item)
     {
 
         for (int i = 0; i < data.length; i++)
@@ -27,35 +24,119 @@ public class DataContainer <T> {
             else if (data[i]==null)
             {
                 data[i] = item;
-                a=i;
+
                 return i;
             }
         }
         T[] data1= Arrays.copyOf(data, (data.length+1));
         data=data1;
         data[data.length-1] = item;
-        a=data.length-1;
+
         return data.length-1;
     }
 
 
-    T get(int index)
+    public T get(int index)
     {
-    if (index==a)
-    {return data[a];
-            }
-    else
-    return null;
+        if (index>(data.length-1))
+        {
+            return null;
+        }
+        else if (index<0)
+        {
+            return null;
+        }
+        else
+        {
+            return data[index];
+        }
     }
 
-//5. В данном классе должен быть метод T get(int index).
-// Данный метод получает из DataContainer'а, из поля data, предварительно сохранённый
-// объект который мы передали на предыдущем шаге через метод add.
-//	5.1 Пример: data = []. Вызвали add(9999). Получили data = [9999].
-//	Метод add вернул число 0. Вызываем get(0). Метод get возвращает 9999
-//	5.2 Пример: data = [9999]. Вызываем get(1). Метод get возвращает null
+    public T[] getItems()
+    {
+        return data;
+    }
+
+
+    //7. Добавить метод boolean delete(int index) который будет удалять элемент из нашего поля data по индексу.
+    //	7.1 Метод возвращает true если у нас получилось удалить данные.
+    //		7.1.1 Пример data = [1, 2, 3, 777]. Вызывают delete(3).
+    //		Должно получиться data = [1, 2, 3]. Метод delete вернёт true
+    //	7.2 Метод возвращает false если нет такого индекса.
+    //		7.2.1 Пример data = [1, 2, 3, 777]. Вызывают delete(9).
+    //		Должно получиться data = [1, 2, 3, 777]. Метод delete вернёт false
+    //	7.3. Освободившуюся ячейку в поеле data необходимо удалить полностью.
+    //	Пустых элементов не должно быть.
+    //		7.3.1 Пример data = [1, 2, 3, 777]. Вызывают delete(2). Должно получиться data = [1, 2, 777]. Метод delete вернёт true
+
+
+    public boolean delete(int index)
+    {
+        if (index>(data.length-1))
+        {
+            return false;
+        }
+        else if (index<0)
+        {
+            return false;
+        }
+
+        T[] data1=Arrays.copyOf(data, (data.length-1));
+
+        for (int i = index; i < data.length-1 ; i++) {
+            data1[i]=data[i+1];
+        }
+        data=data1;
+        return true;
+    }
+
+    public boolean delete(T item) {
+        for (int i = 0; i < data.length ; i++) {
+            if (data[i].equals(item)==true){
+                T[] data1=Arrays.copyOf(data, (data.length-1));
+                for (int j = i; j < data.length-1; j++) {
+                    data1[j]=data[j+1];
+                }
+                data=data1;
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public void sort(Comparator <T> comporator)
+    {
+                Arrays.sort(data, comporator);
+    }
 
 
 
 
+
+//9. Добавить НЕ СТАТИЧЕСКИЙ метод void sort(Comparator<.......> comparator). Данный метод занимается сортировкой
+// данных записанных в поле data используя реализацию сравнения из ПЕРЕДАННОГО объекта comparator.
+
+
+    @Override
+    public String toString() {
+        StringBuilder q = new StringBuilder();
+
+        for (int i = 0; i < data.length; i++) {
+            if (data[i]!=null){
+                q.append("["+ data[i].toString() + "] ");
+            }
+        }
+        return q.toString();
+    }
 }
+
+
+
+
+
+
+
+
+
+
