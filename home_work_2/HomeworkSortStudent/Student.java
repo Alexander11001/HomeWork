@@ -1,12 +1,11 @@
 package collections;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+
+
 import java.util.Random;
 
-public class Student    {
+public class Student   {
     int number;
     String name;
     int age;
@@ -82,12 +81,6 @@ public class Student    {
     public boolean isOly() {
         return oly;
     }
-
-
-
-//    public <T> void SortName (List<T> container, Comparator<T> comparator){
-//
-//    }
 
 
 }

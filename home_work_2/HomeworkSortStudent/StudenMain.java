@@ -29,29 +29,28 @@ public class StudenMain  {
 
 
 
-        Comparator<Student> comparator = Comparator.comparing(obj -> obj.getName());
+        Comparator<Student> comparator = Comparator.comparing(Student::getName);
         Collections.sort( FilterStList, comparator);
 
         for (int i = 0; i < 10; i++) {
             System.out.println(FilterStList.get(i).name);
         }
 
-        Comparator<Student> comparator2 = Comparator.comparing(obj -> obj.getRating());
+        Comparator<Student> comparator2 = Comparator.comparing(Student::getRating);
         Collections.sort( FilterStList, comparator2.reversed());
 
         for (int i = 0; i < 10; i++) {
             System.out.println(FilterStList.get(i).rating);
         }
 
+        Comparator<Student> comparator3 = Comparator.comparing(Student::getAge).thenComparing(Student::getRating);
+        Collections.sort( FilterStList, comparator3);
+//
+        for (int i = 0; i < 10; i++) {
+            System.out.println(FilterStList.get(i).age + " " + FilterStList.get(i).rating);
+        }
 
 
-
-
- // Создать 10_000 объектов класс Student и поместить в коллекцию.
-
-
-
-  //      System.out.println(StList.toString());
 
 
 
