@@ -1,8 +1,9 @@
 package HomeworkCollections;
 
-public class EasySearch {
-    public int IndexOfSearch(String text, String TextToSearch) {
-        int counter = 0;
+public class EasySearch implements ISearchEngine {
+    @Override
+    public long search(String text, String TextToSearch) {
+        long counter = 0L;
         int CounterForSearch = -1;
         if (text.indexOf(TextToSearch, 0) < 0) {
             return 0;

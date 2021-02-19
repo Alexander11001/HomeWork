@@ -1,6 +1,6 @@
 package HomeworkCollections;
 
-public class MetodsForHomework extends EasySearch implements ISearchEngine  {
+public class MetodsForHomework implements ISearchEngine  {
     public int Using (Integer TotalUsing)
     {
      if

@@ -64,18 +64,14 @@ public class CollMain {
         //	4.1 Написать класс EasySearch. Реализовать поиск используя метод indexOf из класса String.
         //	В данной реализации запрещено использовать регулярные выражения в любом виде, для любых задач.
         //	Данный класс ищет слова с учётом регистра.
-        int a = Methods.IndexOfSearch(Stringbook, "фельдфебель");
+        EasySearch easySearch = new EasySearch();
+        System.out.println(easySearch.search(Stringbook, "фельдфебель"));
 
-        System.out.println(Methods.IndexOfSearch(Stringbook, "его"));
 
-        RegExSearch RegExSearch = new RegExSearch();
 
         //	4.2* Написать класс реализующий интерфейс ISearchEngine. Реализовать поиск при помощи класса Matcher.
         // 	Данный класс ищет слова с учётом регистра.
+        RegExSearch RegExSearch = new RegExSearch();
         System.out.println(RegExSearch.search(Stringbook,"к" ));
-
-
-
-
     }
 }
