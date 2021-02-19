@@ -70,11 +70,12 @@ public class CollMain {
 
         RegExSearch RegExSearch = new RegExSearch();
 
-        System.out.println(RegExSearch.search(Stringbook,"фельдфебель" ));
+        //	4.2* Написать класс реализующий интерфейс ISearchEngine. Реализовать поиск при помощи класса Matcher.
+        // 	Данный класс ищет слова с учётом регистра.
+        System.out.println(RegExSearch.search(Stringbook,"к" ));
 
-        String spliterator2 = spliterator.toString();
 
-        System.out.println(spliterator2);
+
 
     }
 }

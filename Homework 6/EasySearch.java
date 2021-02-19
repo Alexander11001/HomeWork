@@ -16,7 +16,3 @@ public class EasySearch {
         }
     }
 }
-//   return text.indexOf(TextToSearch);
-
-//int indexOf(String str, int fromIndex) — возвращает индекс в данной строке первого вхождения указанной подстроки,
-// начиная с указанного индекса. Если не встречается, возвращается -1.
