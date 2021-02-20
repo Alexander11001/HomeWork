@@ -73,5 +73,13 @@ public class CollMain {
         // 	Данный класс ищет слова с учётом регистра.
         RegExSearch RegExSearch = new RegExSearch();
         System.out.println(RegExSearch.search(Stringbook,"к" ));
+
+
+
+    //	4.3* Написать декоратор SearchEnginePunctuationNormalizer для ISearchEngine который будет удалять нежелательные
+    //	символы. Любые знаки препинания, лишние пробелы и например переводы строк.
+
+    SearchEnginePunctuationNormalizer punctuationNormalizer = new SearchEnginePunctuationNormalizer(new RegExSearch());
+        System.out.println(punctuationNormalizer.search(Stringbook, "его"));
     }
 }
