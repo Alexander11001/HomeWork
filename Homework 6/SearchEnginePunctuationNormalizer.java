@@ -12,6 +12,4 @@ public class SearchEnginePunctuationNormalizer implements ISearchEngine {
         String replace = text.replaceAll(".,!?:;\"'()(--)*\\d]+", " ").replaceAll("\\s+", " ");
         return this.iSearch.search(replace, word);
     }
-
-
 }

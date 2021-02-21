@@ -76,10 +76,31 @@ public class CollMain {
 
 
 
-    //	4.3* Написать декоратор SearchEnginePunctuationNormalizer для ISearchEngine который будет удалять нежелательные
-    //	символы. Любые знаки препинания, лишние пробелы и например переводы строк.
+        //	4.3* Написать декоратор SearchEnginePunctuationNormalizer для ISearchEngine который будет удалять нежелательные
+        //	символы. Любые знаки препинания, лишние пробелы и например переводы строк.
 
-    SearchEnginePunctuationNormalizer punctuationNormalizer = new SearchEnginePunctuationNormalizer(new RegExSearch());
+        SearchEnginePunctuationNormalizer punctuationNormalizer = new SearchEnginePunctuationNormalizer(new RegExSearch());
         System.out.println(punctuationNormalizer.search(Stringbook, "его"));
+
+        //4.4* Написать декоратор для ISearchEngine который будет позволять искать данные без учёта регистра.
+        //+
+        //5. Используя реализации интерфейса ISearchEngine вывести информацию как часто встречаются слова "война",
+        // "и" (как союз), "мир" вне зависимости от регистра.
+        System.out.println("----------------------------------");
+
+        SearchEngineWithoutReg engineWithoutRegEasySearch =new SearchEngineWithoutReg(new EasySearch());
+        System.out.println(engineWithoutRegEasySearch.search(Stringbook, "война"));
+        System.out.println(engineWithoutRegEasySearch.search(Stringbook, "и"));
+        System.out.println(engineWithoutRegEasySearch.search(Stringbook, "мир"));
+        System.out.println("----------------------------------");
+        SearchEngineWithoutReg engineWithoutReg2RegExSearch =new SearchEngineWithoutReg(new RegExSearch());
+        System.out.println(engineWithoutReg2RegExSearch.search(Stringbook, "война"));
+        System.out.println(engineWithoutReg2RegExSearch.search(Stringbook, "и"));
+        System.out.println(engineWithoutReg2RegExSearch.search(Stringbook, "мир"));
+
     }
 }
+
+
+
+

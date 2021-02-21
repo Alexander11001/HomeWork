@@ -9,7 +9,7 @@ public class EasySearch implements ISearchEngine {
             return 0;
         } else {
             do {
-                CounterForSearch = text.indexOf(TextToSearch, CounterForSearch+1);
+                CounterForSearch = text.indexOf((" " + TextToSearch +" "), CounterForSearch+1);
                 counter++;
             }
             while (CounterForSearch > 0);

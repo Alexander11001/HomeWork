@@ -9,7 +9,7 @@ public interface ISearchEngine {
 
         //при необходимости поиска знаков препинаия, исключенных реуглярным выражением, придется переписать spliterator
         for (int i = 0; i < spliterator.length; i++) {
-            if (spliterator[i].equals(word))
+            if (spliterator[i].equals(word)) //если необходимо искать без учета регистра можно использовать equalsIgnoreCase
             {
                 counter++;
             }
