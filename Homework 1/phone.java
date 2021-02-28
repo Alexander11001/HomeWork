@@ -1,18 +1,23 @@
 package Lesson2;
 public class phone
 {
-    static String createPhoneNumber (int phone[])
+    public static String createPhoneNumber(int phone[])
     {
         String PhoneNumber = null;
         if (phone.length!=10)
         {
-            System.out.println("Введен неверный формат данных");
+            return "Введен неверный формат данных";
         }
-        else
-        {
-            PhoneNumber = "(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" +
+
+        for (int i = 0; i < 9; i++) {
+            if (phone[i]<0 | phone[i]>9)
+            {
+                return "Введен неверный формат данных";
+            }
+        }
+
+        PhoneNumber = "(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" +
                     +phone[7] + phone[8] + phone[9] + phone[0] + ".";
-        }
         return PhoneNumber;
     }
 

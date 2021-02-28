@@ -3,7 +3,7 @@ package Lesson2;
 import java.util.Scanner;
 
 public class sleep {
-    static boolean sleepIn (boolean weekday, boolean vacation ){
+    public static boolean sleepIn (boolean weekday, boolean vacation ){
         if (weekday == false && vacation == false)
         {
             return true;
