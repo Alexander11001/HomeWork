@@ -1,33 +1,31 @@
-package Lesson2;
+package Homework2;
 public class phone
 {
-    public static String createPhoneNumber(int phone[])
-    {
+    public static String createPhoneNumber(int phone[]) throws PhoneNumberLenghtException, PhoneNumbersException {
         String PhoneNumber = null;
         if (phone.length!=10)
         {
-            return "Введен неверный формат данных";
+            throw new PhoneNumberLenghtException ("Длинна массива превышает длинну номера телефона", phone.length);
+
         }
 
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 10; i++) {
             if (phone[i]<0 | phone[i]>9)
             {
-                return "Введен неверный формат данных";
+                throw new PhoneNumbersException ("Введенный формат цифр не может быть частью телефонного номера");
             }
         }
 
         PhoneNumber = "(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" +
-                    +phone[7] + phone[8] + phone[9] + phone[0] + ".";
+                +phone[7] + phone[8] + phone[9] + phone[0] + ".";
         return PhoneNumber;
     }
-
-    public static void main(String[] args)
-    {
-        int [] mobile = new int[] {1,0,3,0,2,5,6,7,7,8};
-        System.out.println(createPhoneNumber(mobile));
-    }
 }
-
+//    public static void main(String[] args) throws PhoneNumberLenghtException, PhoneNumbersException {
+//        int [] mobile = new int[] {1,0,3,0,2,5,6,7,1,8,};
+//        System.out.println(createPhoneNumber(mobile));
+//    }
+//}
 
 
 //6.* Создать СТАТИЧЕСКИЙ метод createPhoneNumber рядом с методом main,

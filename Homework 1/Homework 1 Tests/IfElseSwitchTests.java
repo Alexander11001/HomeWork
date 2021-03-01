@@ -1,8 +1,8 @@
 package Homework1;
 
-import Lesson2.CommunicationPrinter.welcomIf;
-import Lesson2.CommunicationPrinter.welcomIfElse;
-import Lesson2.CommunicationPrinter.welcomSwitch;
+import Homework2.CommunicationPrinter.welcomIf;
+import Homework2.CommunicationPrinter.welcomIfElse;
+import Homework2.CommunicationPrinter.welcomSwitch;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

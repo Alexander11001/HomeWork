@@ -1,6 +1,6 @@
 package Homework1;
 
-import Lesson2.sleep;
+import Homework2.sleep;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

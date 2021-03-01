@@ -1,6 +1,6 @@
 package Homework1;
 
-import Lesson2.ToBinaryString;
+import Homework2.ToBinaryString;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
