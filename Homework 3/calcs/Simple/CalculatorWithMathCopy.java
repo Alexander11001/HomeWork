@@ -1,5 +1,7 @@
 package Homework5OOP.calcs.Simple;
 
+import Exceptions.custom_exception.DivideByZero;
+import Exceptions.custom_exception.ZeroDivide;
 import Homework5OOP.calcs.additional2.ICalculator;
 
 public class CalculatorWithMathCopy implements ICalculator {
@@ -19,10 +21,10 @@ public class CalculatorWithMathCopy implements ICalculator {
     }
 
     public double division (double a, double b){
-        if (b==0){
-            System.out.println("Вы пытались разделить на ноль");
-            System.exit(0);
-        }
+         if (b==0.0){
+        throw new DivideByZero(" Деление на 0 запрещено");
+
+       }
         double c= a/b;
         return c;
     }

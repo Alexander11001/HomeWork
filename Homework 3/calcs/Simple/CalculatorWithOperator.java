@@ -13,6 +13,7 @@ package Homework5OOP.calcs.Simple;
 //	В main методе требуется создать экземпляр калькулятора и используя методы из данного
 //	экземпляра посчитать выражения из задания 1. Вывести в консоль результат.
 
+import Homework5OOP.Exceptions.DivideByZero;
 import Homework5OOP.calcs.additional2.ICalculator;
 
 public class CalculatorWithOperator  implements ICalculator {
@@ -33,9 +34,8 @@ public class CalculatorWithOperator  implements ICalculator {
     }
 
     public double division (double a, double b){
-        if (b==0){
-            System.out.println("Вы пытались разделить на ноль");
-            System.exit(0);
+        if (b==0) {
+            throw new DivideByZero();
         }
         double c= a/b;
         return c;
@@ -44,13 +44,11 @@ public class CalculatorWithOperator  implements ICalculator {
     public double exponentiation (double a, int b){
         double z=a;
         if (a<0){
-            System.out.println("Неверный формат данных");
-            System.exit(0);
+            throw new IllegalArgumentException("Неверный формат данных");
         }
         else if (b<0){
-            System.out.println("Неверный формат данных");
-            System.exit(0);
-        }
+            throw new IllegalArgumentException("Неверный формат данных");
+       }
         else {
             for (int i = 1; i <b ; i++) {
                 a*=z;

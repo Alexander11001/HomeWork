@@ -1,5 +1,7 @@
 package Homework5OOP.calcs.additional2;
 
+import Homework5OOP.Exceptions.DivideByZero;
+
 public interface ICalculator {
    default double addition(double a, double b){
         double c= a+b;
@@ -17,9 +19,8 @@ public interface ICalculator {
     }
 
     default double division (double a, double b){
-        if (b==0){
-            System.out.println("Вы пытались разделить на ноль");
-            System.exit(0);
+        if (b==0) {
+            throw new DivideByZero();
         }
         double c= a/b;
         return c;

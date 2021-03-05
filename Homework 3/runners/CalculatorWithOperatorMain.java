@@ -12,6 +12,10 @@ public class CalculatorWithOperatorMain {
         double a = Calc1.addition(Calc1.addition(4.1, (Calc1.multiplication(15.0, 7.0))),
                 Calc1.exponentiation(Calc1.division(28.0,5.0), 2));
         System.out.println(a);
+
+        double r= Calc1.division(1,0);
+        System.out.println(Calc1.division(1,0));
+
     }
 
 
